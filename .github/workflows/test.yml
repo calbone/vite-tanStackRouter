@@ -4,6 +4,10 @@ on:
   pull_request:
     types:
       - opened
+    paths:
+      - "**.ts"
+      - "**.tsx"
+      - "**.js"
 
 jobs:
   lint:
@@ -11,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
