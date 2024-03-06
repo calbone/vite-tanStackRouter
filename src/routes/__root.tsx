@@ -8,9 +8,26 @@ export const Route = createRootRoute({
         <Link to='/' className='[&.active]:font-bold'>
           Home
         </Link>{' '}
-        <Link to='/' className='[&.active]:font-bold'>
+        <Link to='/about' className='[&.active]:font-bold'>
           About
-        </Link>
+        </Link>{' '}
+        <Link to='/posts' className='[&.active]:font-bold'>
+          posts
+        </Link>{' '}
+        <Link
+          to='/posts/$postId'
+          params={{
+            postId: '1'
+          }}
+          search={{
+            pageIndex: 3,
+            sortBy: 'price',
+            desc: true
+          }}
+          className='[&.active]:font-bold'
+        >
+          posts/$postId
+        </Link>{' '}
       </div>
       <hr />
       <Outlet />
